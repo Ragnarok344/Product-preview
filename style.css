@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --dark-cyan:hsl(158, 36%, 37%);
+    --cream:hsl(30, 38%, 92%);
+    --very-dark-blue:hsl(212, 21%, 14%);
+    --dark-gray-blue:hsl(228, 12%, 48%);
+    --white:hsl(0, 0%, 100%);
+    --dark-btn:hsl(158, 36%, 20%);
+
+    --ff-montserrat: 'Montserrat', sans-serif;
+    --ff-fraunces: 'Fraunces', serif;
+    --fw-reg:500;
+    --fw-bold:700;
+
+}
+
+*::before,*::after {
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+}
+html,body {
+    height: 100%;
+}
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture,video,canvas,svg {
+    display: block;
+    max-width: 100%;
+}
+input,button,textarea,select {
+    font: inherit;
+}
+p,h1,h2,h3,h4,h5,h6 {
+   overflow-wrap: break-word;
+   
+}
+h1 {
+    line-height: 1; 
+}
+body {
+    font-family:var(--ff-montserrat);
+    font-weight: var(--fw-reg);
+    font-size: 0.875rem;
+    color: var(--dark-gray-blue);
+    background-color: var(--cream);
+    display: grid;
+    place-content: center;
+    margin:1rem;
+}
+.flex-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.product {
+    background-color: var(--white);
+    border-radius: .5rem;
+    overflow: hidden;
+    --content-padding:1.5rem;
+    display: grid;
+    max-width: 600px;
+}
+@media (min-width: 600px) {
+    .product {
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+        
+    }
+}
+.content {
+    padding: var(--content-padding);
+    display: grid;
+    gap: 1rem;
+    
+}
+.category {
+    text-transform: uppercase;
+    letter-spacing: .425rem;
+    font-size: .8125rem;
+}
+.title {
+    font-size: 2rem;
+    font-family: var(--ff-fraunces);
+    color: var(--very-dark-blue);
+}
+.price {
+    font-size: 2rem;
+    font-family: var(--ff-fraunces);
+    color: var(--dark-cyan);
+}
+.hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+.btn {
+    background-color: var(--dark-cyan);
+    cursor: pointer;
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    display: inline-flex;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+    gap:.5rem;
+    font-weight: var(--fw-bold);
+    font-size: .925rem;
+}
+.btn:is(:hover,:focus) {
+    background-color: var(--dark-btn);
+
+}
+.btn[data-icon='cart']::before {
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url("images/icon-cart.svg");
+}
