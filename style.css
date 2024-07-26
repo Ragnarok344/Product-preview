@@ -72,8 +72,6 @@ body {
 @media (min-width: 600px) {
     .product {
         grid-template-columns: 1fr 1fr;
-        padding: 2rem;
-        
     }
 }
 .content {
